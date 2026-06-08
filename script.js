@@ -6,7 +6,7 @@ const soundMap = {
     'A': 'sounds/A.wav',
     'S': 'sounds/S.mp3',
     'D': 'sounds/D.wav',
-    'F': 'sounds/F.mp3'
+    'F': 'sounds/F.wav'
 };
 
 function playSound(keyLetter) {
@@ -21,25 +21,29 @@ function playSound(keyLetter) {
 let keys = document.querySelectorAll('.key');
 keys.forEach(key => {
     key.addEventListener('click', () => {
-        const letter = document.querySelector('.letter').textContent;
+        const letter = key.querySelector('.letter').textContent;
         playSound(letter);
+        key.style.transform = 'translateY(-10px)';
+        key.style.filter = 'drop-shadow(0px 0px 5px #00f3ff)';
         setTimeout(() => {
-            key.style.transform = 'translateY(-10px)';
-            key.style.filter = 'drop-shadow(0px 0px 5px #00f3ff)';
-        }, 100);
+            key.style.transform = 'none';
+            key.style.filter = 'none';
+        }, 150);
     })
 })
 
 window.addEventListener('keydown', (event) => {
     const pressedKey = event.key.toUpperCase();
     keys.forEach(key => {
-        const letter = document.querySelector('.letter');
-        if (letter === pressedKey){
+        const letter = key.querySelector('.letter').textContent;
+        if (letter === pressedKey) {
             playSound(pressedKey);
+            key.style.transform = 'translateY(-10px)';
+            key.style.filter = 'drop-shadow(0px 0px 5px #00f3ff)';
             setTimeout(() => {
-                key.style.transform = 'translateY(-10px)';
-                key.style.filter = 'drop-shadow(0px 0px 5px #00f3ff)';
-            }, 100);
+                key.style.transform = 'none';
+                key.style.filter = 'none';
+            }, 150);
         };
     });
 });
