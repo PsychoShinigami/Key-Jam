@@ -8,7 +8,7 @@
 -JS : Logic (main part)
 
 # How to use
--Go to "https://reaperly.com/Key-Jam/"
+-Go to "https://reaperly.com/Key%20Jam/"
 -CLick any keys from [Q, W, E, R, A, S, D, F]
 -And make whatever ah music you wanna make.
 
